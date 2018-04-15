@@ -1,8 +1,6 @@
-class MyMaxPq
+class PriorityQueue
   attr_reader :keys
   attr_reader :size
-  # test performance against other two
-  # learn things about testing performance
 
   def initialize
     @keys = [nil]
