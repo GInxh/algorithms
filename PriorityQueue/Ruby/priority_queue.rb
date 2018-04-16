@@ -1,6 +1,5 @@
 class PriorityQueue
-  attr_reader :keys
-  attr_reader :size
+  attr_reader :keys, :size
 
   def initialize
     @keys = [nil]
@@ -13,7 +12,8 @@ class PriorityQueue
 
   # PQ Ops
   def isEmpty? 
-    return @keys.size - 1 == 0
+    size
+    return size == 0
   end
 
   # compares <= 1 + logN
