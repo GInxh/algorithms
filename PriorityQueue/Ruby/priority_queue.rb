@@ -13,7 +13,7 @@ class PriorityQueue
   # PQ Ops
   def isEmpty? 
     size
-    return size == 0
+    return @size == 0
   end
 
   # compares <= 1 + logN
