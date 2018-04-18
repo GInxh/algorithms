@@ -1,5 +1,5 @@
 class PriorityQueue
-  attr_reader :keys, :size, :capacity
+  attr_reader :keys, :size
 
   def initialize(capacity)
     @size = 0
