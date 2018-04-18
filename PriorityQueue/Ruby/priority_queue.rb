@@ -2,15 +2,9 @@ class PriorityQueue
   attr_reader :keys, :size, :capacity
 
   def initialize(capacity)
-    @capacity = capacity
     @size = 0
     cap = capacity + 1
     @keys = Array.new(cap)
-  end
-
-  # useful for benchmark testing
-  def capacity
-    return @capacity
   end
 
   def resize
