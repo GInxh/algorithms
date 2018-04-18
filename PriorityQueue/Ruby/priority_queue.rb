@@ -1,4 +1,4 @@
-class SoftPrioQueue
+class PriorityQueue
   attr_reader :keys, :size, :capacity
 
   def initialize(capacity)
