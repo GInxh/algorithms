@@ -1,10 +1,10 @@
 class PriorityQueue
-  attr_reader :keys, :size
+  attr_reader :elements, :size
 
   def initialize(capacity)
     @size = 0
     cap = capacity + 1
-    @keys = Array.new(cap)
+    @elements = Array.new(cap)
   end
 
   def resize
@@ -13,7 +13,7 @@ class PriorityQueue
 
   def downsize
     # prevent loitering
-    @keys[@size] = nil
+    @elements[@size] = nil
     @size -= 1
   end
 
@@ -24,7 +24,7 @@ class PriorityQueue
   # compares <= 1 + logN
   def <<(key)
     resize
-    @keys[@size] = key
+    @elements[@size] = key
     swim(@size)
   end
 
@@ -33,7 +33,7 @@ class PriorityQueue
     if @size <= 0
       raise RuntimeError, "priority queue is empty. Unable to pop more elements"
     else
-      max = @keys[1]
+      max = @elements[1]
       exch(1, @size) 
       downsize
       sink(1)
@@ -72,11 +72,11 @@ class PriorityQueue
   # array helpers
   private
   def less?(i, j)
-    return (@keys[i] < @keys[j])
+    return (@elements[i] < @elements[j])
   end
 
   private
   def exch(i, j)
-    @keys[i], @keys[j] = @keys[j], @keys[i]
+    @elements[i], @elements[j] = @elements[j], @elements[i]
   end
 end
